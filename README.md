@@ -6,8 +6,8 @@
   - [ ] Domain model - UML class diagrams
   - [ ] Lexicon - Describes terminology
   - [x] list of requirements, two sections:
-    - Those you plan to implement in Iteration 1 (i.e. by November 16th)
-    - Those you plan to implement in Iteration 2 (i.e., by November 30th)
+    - Requirements for Iteration 1 (Due November 16th)
+    - Requirements for Iteration 2 (Due November 30th)
 
 # [Specification document]
   - [ ] Use case diagrams
