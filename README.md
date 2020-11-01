@@ -5,7 +5,7 @@
 ## Requirements document:
   - [ ] Domain model - UML class diagrams
   - [ ] Lexicon - Describes terminology
-  - [ ] list of requirements, two sections:
+  - [x] list of requirements, two sections:
     - Requirements for Iteration 1 (Due November 16th)
     - Requirements for Iteration 2 (Due November 30th)
 
@@ -13,7 +13,7 @@
   - [ ] Use case diagrams
   - [ ] State diagrams
   - [ ] Use cases
-  - [ ] Wire frame diagrams
+  - [x] Wire frame diagrams
   - [ ] Sequence diagrams
 
 
@@ -32,7 +32,7 @@
   - [ ] Sequence diagrams
 
 ## Utkarsh Trivedi
-  - [ ] Wire frame diagrams
+  - [x] Wire frame diagrams
   - [ ] PPT
-  - [ ] Repository
-  - [ ] List of requirements
+  - [x] Repository
+  - [x] List of requirements
