@@ -20,8 +20,8 @@
 # Division of tasks for Iteration 0 - Due November 2  
 
 ## Damini Prajapati
- - [ ] Class diagrams
- - [ ] Use case diagrams
+ - [x] Class diagrams
+ - [x] Use case diagrams
 
 ## Shujana Mostafa
   - [ ] State diagrams
