@@ -1,4 +1,27 @@
-# 2020-9874-Bravo - Damini, Shujana, Preethi, Utkarsh
+# 2020-9874- Team Bravo - Shujana, Preethi, Utkarsh
+
+## Iteration 1: (Due 16th Nov, 2020)
+
+- [ ] 1. Container
+- [ ] 2. Object and properties
+- [ ] 3. States
+- [ ] 4. Attributes
+- [ ] 5. Features:
+      -Save - [ ]
+      -Load - [ ]
+      -Edit - [ ]
+- [ ] 6. Edit Mode
+- [ ] 7. Transition
+
+
+## Iteration 2: (Due 30th Nov, 2020)
+
+- [ ] 8.  Timeline
+- [ ] 9.  Camera
+- [ ] 10. Camera Movement
+- [ ] 11. Bug review
+- [ ] 12. Testing
+
 
 # Iteration 0 - Due November 2
 
