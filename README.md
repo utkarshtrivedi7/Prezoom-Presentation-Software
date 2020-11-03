@@ -7,9 +7,9 @@
 - [ ] 3. States
 - [ ] 4. Attributes
 - [ ] 5. Features:
-      -Save - [ ]
-      -Load - [ ]
-      -Edit - [ ]
+      - [ ]Save
+      - [ ]Load
+      - [ ]Edit
 - [ ] 6. Edit Mode
 - [ ] 7. Transition
 
