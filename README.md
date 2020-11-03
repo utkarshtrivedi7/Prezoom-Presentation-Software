@@ -48,14 +48,17 @@
 
 ## Shujana Mostafa
   - [x] State diagrams
-  - [x] Use cases
+  - [x] User stories
+  - [x] Requirements Document
 
 ## Monisha Preethi Fredrick
   - [x] Lexicon
   - [x] Sequence diagrams
+  - [x] Use Cases
 
 ## Utkarsh Trivedi
   - [x] Wire frame diagrams
   - [x] PPT
   - [x] Repository
   - [x] List of requirements
+  - [x] Sequence Document
