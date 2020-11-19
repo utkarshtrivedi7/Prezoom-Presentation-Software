@@ -1,0 +1,1786 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="High%20level%20design%20document_files/filelist.xml">
+<link rel=Edit-Time-Data
+href="High%20level%20design%20document_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Utkarsh Trivedi</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Utkarsh Trivedi</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>650</o:TotalTime>
+  <o:Created>2020-11-19T02:02:00Z</o:Created>
+  <o:LastSaved>2020-11-19T02:02:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1655</o:Words>
+  <o:Characters>9436</o:Characters>
+  <o:Lines>78</o:Lines>
+  <o:Paragraphs>22</o:Paragraphs>
+  <o:CharactersWithSpaces>11069</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="High%20level%20design%20document_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="High%20level%20design%20document_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-CA</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:DocumentVariables>
+   <w:__Grammarly_42____i>H4sIAAAAAAAEAKtWckksSQxILCpxzi/NK1GyMqwFAAEhoTITAAAA</w:__Grammarly_42____i>
+   <w:__Grammarly_42___1>H4sIAAAAAAAEAKtWcslP9kxRslIyNDYyNQACIGFobGFgbG6opKMUnFpcnJmfB1JgVgsACd3UPiwAAAA=</w:__Grammarly_42___1>
+  </w:DocumentVariables>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1073732485 9 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-CA;
+	mso-fareast-language:EN-US;}
+p
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:456798272;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1131619540 67698699 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0D8;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:1744796422;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1117648738 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:126.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:162.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:198.0pt;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:234.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:270.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:306.0pt;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:342.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:8.0pt;
+	mso-para-margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:39;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-CA style='tab-interval:36.0pt;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b>3. You should have a folder named design containing<o:p></o:p></b></p>
+
+<p class=MsoNormal><b>(a) High-level design document (in HTML).<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=SpellE><b>i</b></span><b>. Containing one or
+more UML class diagrams showing your packages and the<o:p></o:p></b></p>
+
+<p class=MsoNormal><b>dependence relations between these packages. Also show
+library packages<o:p></o:p></b></p>
+
+<p class=MsoNormal><b>or third-party packages that are used.<o:p></o:p></b></p>
+
+<b><span style='font-size:11.0pt;line-height:107%;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-CA;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1028" type="#_x0000_t75"
+ alt="Diagram&#10;&#10;Description automatically generated" style='width:1050pt;
+ height:684pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="High%20level%20design%20document_files/image001.jpg"
+  o:title="Diagram&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img width=1400 height=912
+src="High%20level%20design%20document_files/image001.jpg"
+alt="Diagram&#10;&#10;Description automatically generated" v:shapes="Picture_x0020_1"><![endif]></span><span
+style='mso-bidi-font-weight:bold'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b>ii. For each of your packages, a short description of the
+purpose of the package.<o:p></o:p></b></p>
+
+<p class=MsoNormal>The implementation of the project is done with the MVC
+software design pattern. Hence the main packages used are as follows:<br>
+<br>
+1) Model Package:</p>
+
+<p class=MsoNormal>The model package is responsible to update the view package
+after it receives the manipulations from the controller package. The model
+package is the central component of this pattern. It is responsible for
+directly managing the data application data, logic, and rules of the
+application.</p>
+
+<p class=MsoNormal>Contains: exit.java, fontSize.java, main.java, panelInfo.java
+etc.</p>
+
+<p class=MsoNormal>2) View Package:</p>
+
+<p class=MsoNormal>Any representation of the application and information is
+handled with the help of this package. Multiple different customizations according
+to our requirements are done so that we can create a GUI based on it which
+serves our purpose.</p>
+
+<p class=MsoNormal>Contains: addpanel.java, ComponentMover.java,
+ComponentResizer.java, FileFilter.java, JpanelSlider.java etc.</p>
+
+<p class=MsoNormal>3) Controller Package:</p>
+
+<p class=MsoNormal>The purpose of the controller package is to accept the input
+and convert it to use for the model and the view packages. It performs
+interactions on the data model objects. It receives the input, validates it
+optionally and then proceeds to pass it to the model.</p>
+
+<p class=MsoNormal>Contains: FontChooser.java, Jtext.java, MainFrame.java, etc.</p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b>iii. For any third-party packages, you use, explain the
+purpose of the package<o:p></o:p></b></p>
+
+<p class=MsoNormal><b>and where its documentation can be found.<o:p></o:p></b></p>
+
+<p class=MsoNormal>We have created the application interface GUI using the
+JTattoo, which is used for developing GUI with the help of swing applications.
+It enhances the look in comparison to the standard JDK. The documentation can
+be found at the following web address along with installation and usage
+procedure:<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal>http://www.jtattoo.net/index.html</p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b>iv. For each of your packages, one or more class diagrams
+showing the classes<o:p></o:p></b></p>
+
+<p class=MsoNormal><b>and interfaces inside the package, associations between
+them and associations with classes in other packages that are depended on.<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_2"
+ o:spid="_x0000_i1027" type="#_x0000_t75" alt="Diagram&#10;&#10;Description automatically generated"
+ style='width:756.6pt;height:428.4pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="High%20level%20design%20document_files/image002.jpg"
+  o:title="Diagram&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img width=1009 height=571
+src="High%20level%20design%20document_files/image002.jpg"
+alt="Diagram&#10;&#10;Description automatically generated" v:shapes="Picture_x0020_2"><![endif]></span><span
+style='mso-bidi-font-weight:bold'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_3"
+ o:spid="_x0000_i1026" type="#_x0000_t75" alt="A picture containing graphical user interface&#10;&#10;Description automatically generated"
+ style='width:647.4pt;height:330.6pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="High%20level%20design%20document_files/image003.jpg"
+  o:title="A picture containing graphical user interface&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img width=863 height=441
+src="High%20level%20design%20document_files/image003.jpg"
+alt="A picture containing graphical user interface&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_3"><![endif]></span><span style='mso-bidi-font-weight:
+bold'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_4"
+ o:spid="_x0000_i1025" type="#_x0000_t75" alt="A picture containing diagram&#10;&#10;Description automatically generated"
+ style='width:786pt;height:411pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="High%20level%20design%20document_files/image004.jpg"
+  o:title="A picture containing diagram&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img width=1048 height=548
+src="High%20level%20design%20document_files/image004.jpg"
+alt="A picture containing diagram&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_4"><![endif]></span><span style='mso-bidi-font-weight:
+bold'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b>v. For each class and interface, a description of the
+purpose of the class. I.e.,<o:p></o:p></b></p>
+
+<p class=MsoNormal><b>what it represents or does.<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>FileFilter</span></b></span><b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>:</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'> </span><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>The main functionality of <span class=SpellE>FileFilter</span> is
+to open, save, save as and exit the file. This class is a filter that has used
+to returns abstract pathnames denoting the files and directories in a given
+directory so that it can be opened and saved properly.<span style='mso-bidi-font-weight:
+bold'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><b><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>Shape:</span></b><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold'> This class is for managing
+all the shapes. </span><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>It has functionalities to move the components on the slide
+anywhere in x-y direction.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>AddStates</span></b></span><b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>:</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'> It will manage all the states.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>Transition:</span></b><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold'> Transition class is
+to maintain state’s transitions like next state, previous states.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>Camera:</span></b><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold'> This class is
+responsible to maintain camera position, zooming factors like zoom-in,
+zoom-out.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>MainFrame</span></b></span><b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>:</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'> </span><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>It is the GUI of whole app that’s shows buttons like- File, Home,
+View, Edit, Camera, Presentation, Transitions, Undo as well as attribute panel
+and panel (left slides panel and the main slide panel). <o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>StatesPanel</span></b></span><b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>:</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'> This class is for adding, updating panels. </span><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>It
+actually adds the slides by clicking the Add Slide button which has shown in
+Home Panel.<span style='mso-bidi-font-weight:bold'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>FontChooser</span></b></span><b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>:</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'> </span><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>This class helps to select font for writing text on the slides.<span
+style='mso-bidi-font-weight:bold'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>FontType</span></b></span><b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>:</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'> To get the Font type and to use the font in the text box, this class has
+used.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>ColourChooser</span></b></span><b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>:</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'> <span class=SpellE>ColorChooser</span> class is o choose the color for
+text, shapes.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>FontSize</span></b></span><b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>:</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'> </span><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>To change the font-size, color, and its font-family in our project
+by using <span class=SpellE>FontSize</span> class.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>Main:</span></b><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold'> </span><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>It’s the
+main class from where our code is running.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>States:</span></b><span style='mso-bidi-font-family:Calibri;
+mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold'> This class controls
+state’s position, it’s height and width.</span><b><o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>PanelInfo</span></b></span><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'>: </span><span style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'>It stores all the info about the panels we add into it.<span
+style='mso-bidi-font-weight:bold'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>CameraController</span></b></span><b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>:</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'> This class controls camera’s position as well as zoom-in, zoom-out
+functions.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b><span style='mso-bidi-font-family:
+Calibri;mso-bidi-theme-font:minor-latin'>StateController</span></b></span><b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>:</span></b><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
+bold'> <span class=SpellE>StateController</span> class is responsible for
+modifying states. It controls adding, deleting, updating of states.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b>(b) A test plan that explains how you intend to test each
+package and class.<o:p></o:p></b></p>
+
+<p class=MsoNormal><span style='mso-bidi-font-weight:bold'>-For testing purpose
+we use Junit, it <span class=GramE>helps<span style='mso-spacerun:yes'> 
+</span>for</span> to writing and running tests. By using Junit in our <span
+class=SpellE>preezoom</span> presentation software. While testing the classes
+of our presentation software while testing <span class=GramE>the each</span>
+package and classes, The program runs automatically and they check their own
+results and it generate the feedback automatically.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>Model<o:p></o:p></b></p>
+
+<p class=MsoNormal><span style='mso-bidi-font-weight:bold'>It provides complete
+variable objects to the Controller layer, <span class=GramE>like<span
+style='mso-spacerun:yes'>  </span>data</span>, tools, and static files so that
+you can have reliable and <span class=SpellE>maintaipulate</span> the data
+resource to test against. The data or information provided by the model package
+can range<span style='mso-spacerun:yes'>  </span>variables by testing
+environment and the ones generated by user customized tools .This layer
+contains only the functionalities to read and update test data and use <span
+class=SpellE>tools.while</span> testing its classes.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>Main:</b><span style='mso-bidi-font-weight:bold'><span
+style='mso-spacerun:yes'>  </span>The main class from where our code is running
+is running successfully and the feedback is generated.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b>Panelinfo</b></span><b>:</b><span
+style='mso-bidi-font-weight:bold'> During testing the panel information are
+updated in the panel <span class=SpellE>infobar</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>Font size:</b><span style='mso-bidi-font-weight:bold'>
+The font size is working well the user can change the font size according to
+their needs .The color and text theme are working perfectly the user can use
+these options for their <span class=SpellE>slide.The</span> code for changing <span
+class=SpellE>color,text,size</span> are running successfully and the feedback
+is <span class=SpellE>enerated</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>Camera <span class=SpellE><span class=GramE>controller<span
+style='font-weight:normal;mso-bidi-font-weight:bold'>:The</span></span></span></b><span
+style='mso-bidi-font-weight:bold'> controller should control the camera
+movements ,The camera movements are still in the developing stage.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>State <span class=SpellE><span class=GramE>controller:<span
+style='font-weight:normal;mso-bidi-font-weight:bold'>The</span></span></span></b><span
+style='mso-bidi-font-weight:bold'> state controller is still in developing <span
+class=SpellE>stage.We</span> are facing some error while updating and modifying
+the states testing it will be recovered soon and it will be implemented as soon
+as possible.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>Controller<o:p></o:p></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-font-weight:
+bold'>It is the interactions between your test cases and the Model layer. The
+controller layer is responsible only for providing functions or libraries for
+the overall test architecture. It gets data or information created by the tool
+or from the model layer, tests the given data, and returns the outcome for the
+test cases while testing <span class=SpellE>phaseThe</span> controller layer <span
+class=SpellE>contrls</span> all the logic involved in while interacting with
+test cases and will deliver data from the model to the <span class=SpellE>testsuite</span>
+layer to perform testing.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b>FileFilter</b></span><b>:</b><span
+style='mso-bidi-font-weight:bold'> In file filter the open and exit operations
+are working but we are still implementing and working on with save and save as
+option.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b>AddStates</b></span><b>:</b><span
+style='mso-bidi-font-weight:bold'> All states are manageable but still we are
+in the developing and testing stage.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>Camera:</b><span style='mso-bidi-font-weight:bold'> The
+main functions are zoom in zoom <span class=SpellE><span class=GramE>out,The</span></span>
+functions are coded properly but while testing there are some warnings but still
+the functions are in implementation level.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>Shape:</b><span style='mso-bidi-font-weight:bold'> It has
+functionalities to move the components on the slide anywhere in x-y direction. The
+orientations are coded properly but we are still in the testing level we are
+facing some error while testing. The <span class=SpellE><span class=GramE>rectangle,line</span>,circle,oval</span>
+are implemented but we are facing issue while drawing on the <span
+class=SpellE>silde</span> it will be implemented as soon as possible.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>Transition:</b><span style='mso-bidi-font-weight:bold'>
+The transitions of state like next state, previous states are still in the
+developing stage.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>View<o:p></o:p></b></p>
+
+<p class=MsoNormal><span style='mso-bidi-font-weight:bold'>This layer handles
+user interaction. Its main job is to make sure the data is presented to the
+user in a readable and user friendly.&nbsp;The other function is to is
+submitting or generating&nbsp;the user actions to the Controller along with the
+user data that are provided.&nbsp;This layer handles the user interaction
+allows you to change the functions in <span class=SpellE>preezoom</span>
+presentation software<span style='mso-spacerun:yes'>  </span>according to the
+user needs .While testing this layer, some of the classes operation are tested
+and implemented and some of the class operations are still in the testing
+stage.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-bidi-font-weight:bold'><span
+style='mso-spacerun:yes'> </span><span class=SpellE><b>StatesPanel</b></span><b>:</b>
+The slide panel is working in a perfect manner. The test results are generated <span
+class=SpellE>automatincally</span> in Junit.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b>FontChooser</b></span><b>: </b><span
+style='mso-bidi-font-weight:bold'>While testing the code runs properly the user
+can choose the font according to their needs and the feedback is generated and
+the result is obtained.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b>FontType</b></span><b>:</b><span
+style='mso-bidi-font-weight:bold'> The font type option is working properly and
+it is <span class=GramE>implemented .</span> The code is tested properly and it
+is <span class=SpellE><span class=GramE>runnable,the</span></span> result is
+generated.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b>ColourChooser</b></span><b>:</b><span
+style='mso-bidi-font-weight:bold'> The user can choose the color for text,
+shapes. like red, pink, blue, green etc., in their slide. The code is tested
+and it is implemented properly.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><b>MainFrame</b></span><b>: </b><span
+style='mso-bidi-font-weight:bold'>The GUI-Graphical User Interface of whole app
+that’s shows buttons like- File, Home, View, Edi options or functions are
+tested and it is implemented properly but Camera, Presentation, Transitions,
+State controller functions are still in the developing stage. It will be tested
+and implemented in the Iteration 2.<b><o:p></o:p></b></span></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b>(c) A short document that explains how to compile and
+execute your code.<o:p></o:p></b></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+0cm'><span lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin;mso-bidi-font-weight:bold'>To compile and execute the code, we need
+proper platform to run the project. <o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+0cm;text-indent:18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-latin;color:#202124;background:white;
+mso-bidi-font-weight:bold'>-Java</span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-latin;color:#202124;background:white'>&nbsp;SE
+Development <span class=GramE>Kit :</span><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin;color:#202124;background:white'>In order to compile and&nbsp;<span
+style='mso-bidi-font-weight:bold'>execute</span>&nbsp;our&nbsp;<span
+style='mso-bidi-font-weight:bold'>Java project “<span class=SpellE>Prezoom</span></span>,
+it&nbsp;<span style='mso-bidi-font-weight:bold'>need to install</span>&nbsp;a
+latest version of software <span style='mso-bidi-font-weight:bold'>program</span>
+called&nbsp;<span style='mso-bidi-font-weight:bold'>Java</span>&nbsp;SE Development
+Kit (or JDK for short, and SE means Standard Edition).<o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+0cm;text-indent:18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-latin;color:#202124;background:white;
+mso-bidi-font-weight:bold'>-Java</span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-latin;color:#202124;background:white'>&nbsp;Runtime
+<span class=GramE>Environment :</span><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin;color:#202124;background:white'>A JDK contains JRE (<span
+style='mso-bidi-font-weight:bold'>Java</span>&nbsp;Runtime Environment) basically
+which is the core of the&nbsp;<span style='mso-bidi-font-weight:bold'>Java</span>&nbsp;platform
+that enables&nbsp;<span style='mso-bidi-font-weight:bold'>running Java programs</span>&nbsp;on
+the computer. </span><span lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin;color:#333333;background:white'>The JRE includes&nbsp;<strong><span
+style='font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin;font-weight:
+normal;mso-bidi-font-weight:bold'>JVM</span></strong><strong><span
+style='font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin'>&nbsp;</span></strong><em><span
+style='font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:minor-latin'>(Java Virtual
+Machine)</span></em>&nbsp;that runs Java programs by translating from bytecode
+to platform-dependent code and executes them (Java programs are compiled into
+an intermediate form called bytecode).<o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+0cm;text-indent:18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-latin;color:black'>-Operating <span
+class=GramE>system :</span></span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-latin;color:#202124;background:white'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin;color:black'>For compiling and executing, operating system windows,
+Mac or <span class=SpellE>Linax</span> is suitable for our java project <span
+class=SpellE>PreZoom</span>.<o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+0cm;text-indent:18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-latin;color:black'>-Text <span
+class=GramE>Editor :</span> </span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-latin;color:#202124;background:white'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin;color:black'>To code for the program, a text editor eclipse has
+been used. Any text editor is fine such as <span class=SpellE>netbeans</span>, <span
+class=SpellE>codeblocks</span>. <o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+0cm;text-indent:18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+minor-latin;mso-bidi-theme-font:minor-latin;color:black'>-JTattoo: <o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
+18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin;color:black'>To improve application with a user interface, <span
+class=SpellE>Jtattoo</span> has used which consists of several different Look for
+swing project. It is an essential third party package which is included with
+the project.</span><span lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
+minor-latin;color:#202124;background:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b>4. You should have a folder named <span class=SpellE>src</span>
+(or source) that contains your source code.<o:p></o:p></b></p>
+
+<p class=MsoNormal><b>(a) Each class should be documented using <span
+class=SpellE>JavaDoc</span> (for Java), <span class=SpellE>TSDoc</span> (for
+Typescript), or Dox (for <span class=SpellE>Haxe</span>). Each public method
+should also be documented.<o:p></o:p></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=684
+ style='width:513.1pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:26.0pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:26.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><b><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Times New Roman",serif;mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:
+  major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:EN-US'>Class Name<o:p></o:p></span></b></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:26.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><b><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Times New Roman",serif;mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:
+  major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:EN-US'>Functionality<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:53.5pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:53.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><b><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Times New Roman",serif;mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:
+  major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:EN-US'>Main</span></b><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:53.5pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'>It’s the main class from where our code
+  is running.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:63.95pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:63.95pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><span class=SpellE><b><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'>MainFrame</span></b></span><span lang=EN-US style='font-size:12.0pt;
+  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:63.95pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'>It’s the GUI of whole app that’s shows
+  buttons (File, Home, View, Edit, Camera, Presentation, Transitions<span
+  class=GramE>),<span style='mso-spacerun:yes'>  </span>attribute</span> panel
+  and panel (left slides panel and the main slide panel).<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:48.55pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:48.55pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><span class=SpellE><b><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'>JPanelSlider</span></b></span><span lang=EN-US style='font-size:12.0pt;
+  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:48.55pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'>It swaps the main slide to left and right
+  using media buttons<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:52.05pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:52.05pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><span class=SpellE><b><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'>FileFilter</span></b></span><span lang=EN-US style='font-size:12.0pt;
+  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:52.05pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'>Its functionality is to open, <span
+  class=GramE>save ,</span> saves and exit the file.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:53.5pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:53.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><span class=SpellE><b><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'>Addpanel</span></b></span><span lang=EN-US style='font-size:12.0pt;
+  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:53.5pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'>It actually add the slides by clicking
+  the Add Slide button(show in Home Panel).<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:52.6pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:52.6pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><span class=SpellE><b><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'>ComponentResizer</span></b></span><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:52.6pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'>The main functionality of this class is
+  to resize the components which we add on the slides like shapes and text
+  boxes.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:49.45pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:49.45pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><span class=SpellE><b><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'>ComponentMover</span></b></span><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:49.45pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  class=GramE><span lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'>It’s</span></span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:
+  major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;
+  mso-ansi-language:EN-US'> functionality is to move the components on the
+  slide anywhere in x-y direction.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:52.05pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:52.05pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><span class=SpellE><b><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'>FontSize</span></b></span><span lang=EN-US style='font-size:12.0pt;
+  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:52.05pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'>We change the font-size, color, and its
+  font-family by using this class.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;height:52.05pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:52.05pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><span class=SpellE><b><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'>PanelInfo</span></b></span><b><span lang=EN-US style='font-size:12.0pt;
+  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'><o:p></o:p></span></b></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:52.05pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'>It stores all the info about the panels
+  we add into it.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;mso-yfti-lastrow:yes;height:52.05pt'>
+  <td width=159 valign=top style='width:119.4pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:52.05pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+  line-height:normal'><span class=SpellE><b><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'>JText</span></b></span><b><span lang=EN-US style='font-size:12.0pt;
+  font-family:"Times New Roman",serif;mso-ascii-theme-font:major-bidi;
+  mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:major-bidi;mso-ansi-language:
+  EN-US'><o:p></o:p></span></b></p>
+  </td>
+  <td width=525 valign=top style='width:393.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:52.05pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman",serif;
+  mso-ascii-theme-font:major-bidi;mso-hansi-theme-font:major-bidi;mso-bidi-theme-font:
+  major-bidi;mso-ansi-language:EN-US'>This class helps to add text on the
+  slides.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Prezooom/src"/>
+	<classpathentry kind="lib" path="Prezooom/test/JPanelSlider.jar"/>
+	<classpathentry kind="output" path="Prezooom/build/classes"/>
+</classpath>
