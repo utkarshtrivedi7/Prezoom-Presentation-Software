@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package prezooom.app.Model;
 import java.awt.event.ActionEvent;
 import java.awt.Rectangle;
@@ -8,22 +12,24 @@ import java.awt.Container;
 import java.awt.Component;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
-import java.awt.LayoutManager;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class JPanelSlider extends JPanel
 {
     public static final boolean left = false;
     public static final boolean right = true;
     
-    public JPanelSlider() {
+    @SuppressWarnings("unused")
+	public JPanelSlider() {
         this.setLayout(new CardLayout());
         this.setBorder(BorderFactory.createEtchedBorder());
         final Dimension dimension = new Dimension(this.getWidth(), this.getHeight());
     }
     
-    public void nextPanel(final Component panel) {
+    @SuppressWarnings("unused")
+	public void nextPanel(final Component panel) {
         final Component currentComp = this.getCurrentComponent(this);
         final Rectangle b = currentComp.getBounds();
         panel.setVisible(true);
@@ -80,6 +86,7 @@ public class JPanelSlider extends JPanel
     }
     
     public class JPanelSlidingListener implements ActionListener
+
     {
         Component hidePanel;
         Component showPanel;
@@ -116,4 +123,7 @@ public class JPanelSlider extends JPanel
             }
         }
     }
+
+
+
 }

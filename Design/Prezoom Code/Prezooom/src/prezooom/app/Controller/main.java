@@ -1,52 +1,27 @@
 package prezooom.app.Controller;
-import java.awt.Color;
+import prezooom.app.Model.Display;
+import prezooom.app.Model.Popup;
 import prezooom.app.View.MainFrame;
-import prezooom.app.*;
 
 
-public class main {
-    private fontsize font=fontsize.create();
-    
-    public static void main(String [] args)
+@SuppressWarnings("unused")
+public class Main {
+
+   
+   
+
+     public static void main(String [] args)
+   
     {
+		 
+    	   MainFrame f=new MainFrame();
+	       Display d=new Display(f);
+		   Popup p=new Popup(f,d);
+		   Controller control=new Controller(f,d);
     
-    new MainFrame().setVisible(true);
+            f.setVisible(true);
 
     }    
-    
-    public void setfont(String fn){
-    
-        font.setfont(fn);
-        
-    }
 
-    public String getfont(){
-    
-      return font.getfont();
-    }
-    
-        public void setsize(int fn){
-    
-        font.setsize(fn);
-        
-    }
-
-    public int getsize(){
-    
-      return font.getsize();
-    }
-    
-    
-        public void setcolor(Color c){
-    
-           font.setcolor(c);
-    
-    }  
-    public Color getcolor(){
-    
-    
-         return font.getcolor();
-    }
-    
     
 }
