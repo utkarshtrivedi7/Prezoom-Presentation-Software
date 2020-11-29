@@ -2,25 +2,25 @@
 
 ## Iteration 1: (Due 16th Nov, 2020)
 
-- [ ] 1. Container
-- [ ] 2. Object and properties
-- [ ] 3. States
-- [ ] 4. Attributes
-- [ ] 5. Features
+- [x] 1. Container
+- [x] 2. Object and properties
+- [x] 3. States
+- [x] 4. Attributes
+- [x] 5. Features
    -  Save
    -  Load
    -  Edit
-- [ ] 6. Edit Mode
-- [ ] 7. Transition
+- [x] 6. Edit Mode
+- [x] 7. Transition
 
 
 ## Iteration 2: (Due 30th Nov, 2020)
 
-- [ ] 8.  Timeline
-- [ ] 9.  Camera
-- [ ] 10. Camera Movement
-- [ ] 11. Bug review
-- [ ] 12. Testing
+- [x] 8.  Undo Redo
+- [x] 9.  Camera
+- [x] 10. Camera Movement
+- [x] 11. Bug review
+- [x] 12. Testing
 
 
 # Iteration 0 - Due November 2
