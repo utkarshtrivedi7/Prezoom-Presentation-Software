@@ -155,9 +155,9 @@ public void undo() {
 }
 @SuppressWarnings("unchecked")
 public void redo() {
-	shapes.addElement(shapes2.elementAt(0));
-	shapes2.removeElementAt(0);
-	this.repaint();	
+	shapes.addElement(shapes2.elementAt(shapes2.size()-1));
+	shapes2.removeElementAt(shapes2.size()-1);
+	this.repaint();
 }
   public void paintComponent(Graphics g){
     super.paintComponent(g);

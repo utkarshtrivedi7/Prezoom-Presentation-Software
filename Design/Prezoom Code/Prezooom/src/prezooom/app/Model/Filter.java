@@ -124,16 +124,20 @@ public class Filter extends WindowAdapter {
 
 	        
        
-	      }
+	      
 	      disp[ind].shapes.add(shapeTmp);
 	 
-	    //disp[0].shapes.add(shapeTmp);   
+	      }
 	      buff.close();	
-	      for(int i=0;i<slides;i++) {
+	      
+	      //for(int i=0;i<slides;i++)
+	      int i=0;
+	      do
+	      {
 		    	
         	  minidraw.addDisplay(i,disp[i]);
-        
-	      }
+        i++;
+	      }while(i<slides);
 	    }
 	    
 	    catch(IOException e){

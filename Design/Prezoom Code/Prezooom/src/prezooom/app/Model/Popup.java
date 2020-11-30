@@ -28,9 +28,9 @@ private static final long serialVersionUID = 1L;
     this.minidraw = minidraw;
     this.display = display;
 
-    JMenuItem animate = new JMenuItem("animate");
-    animate.addActionListener(this);
-    add(animate);
+//    JMenuItem animate = new JMenuItem("animate");
+//    animate.addActionListener(this);
+//    add(animate);
 
     add(new JSeparator());
     
