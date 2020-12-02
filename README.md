@@ -1,31 +1,31 @@
 # Features That we have successfully implemented :
-##File: handle files.
+## File: handle files.
 - New: It will open new file for presentation.
 - Open: It will open existing file for presentation.
 - Save: It will save the presentation.
 - Exit: It will exit the Prezoom software.
-##Home: For making presentation.
-  - Shapes: It is for drawing.
-		- Circle: This is for making Circle
-		- Rectangle: This is for making Rectangle
-		- Square: This is for making Square
-		- Oval: This is for making Oval
-		- Line: This is for making Line  
-	- Move: This will allow to move shapes.
-	- Add slide: It will add new states
-  - Delete Slide: It will delete states
-	- Color: This feature is for selecting color for shape’s line or filling the shapes with color
-	- Text Box: It will make create text box for writing
-	- Text Type: Type of text can be selected.
-	- Text Size: It will select size for text.
-##Edit: This feature is for editing the presentation.
-	Undo: The perform action can be undone.
-	Redo: The perform action can be redone.
-  Duplicate: Can duplicate the previous state to the new state
-##Transition: It will help to move the panel.
-##Presentation: It is for presenting the presentation.
-	Next Slide: It is for going to next state in the presentation mode.
-	Previous Slide: It is for going to previous state in the presentation mode.
+## Home: For making presentation.
+- Shapes: It is for drawing.
+- Circle: This is for making Circle
+- Rectangle: This is for making Rectangle
+- Square: This is for making Square
+- Oval: This is for making Oval
+- Line: This is for making Line  
+- Move: This will allow to move shapes.
+- Add slide: It will add new states
+- Delete Slide: It will delete states
+- Color: This feature is for selecting color for shape’s line or filling the shapes with color
+- Text Box: It will make create text box for writing
+- Text Type: Type of text can be selected.
+- Text Size: It will select size for text.
+## Edit: This feature is for editing the presentation.
+- Undo: The perform action can be undone.
+- Redo: The perform action can be redone.
+- Duplicate: Can duplicate the previous state to the new state
+## Transition: It will help to move the panel.
+## Presentation: It is for presenting the presentation.
+- Next Slide: It is for going to next state in the presentation mode.
+- Previous Slide: It is for going to previous state in the presentation mode.
 
 
 
