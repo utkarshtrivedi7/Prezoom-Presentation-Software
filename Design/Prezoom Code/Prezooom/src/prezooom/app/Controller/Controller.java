@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
+import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -42,8 +43,6 @@ public class Controller {
     public int states=0;
     public  fontsize ft;
 
-   
-   
    
 	public Controller(MainFrame f, Display d) {
        Display=new JPanel();
@@ -87,6 +86,7 @@ public int total_slides() {
 	return mainframe.state();
 }
 
+
 public Display getDispl(int ind) {
 	return mainframe.getDisplay(ind);
 }
@@ -100,5 +100,10 @@ public void clear() {
 	mainframe.clear();
 }
 
+public Vector duplicate(Vector orig) {
+	Vector copy=(Vector)orig.clone();
+	return copy;
+	
+}
 
 }

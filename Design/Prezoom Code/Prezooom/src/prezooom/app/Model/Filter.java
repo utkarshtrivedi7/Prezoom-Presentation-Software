@@ -46,6 +46,9 @@ public class Filter extends WindowAdapter {
 		
 	}
 
+	
+	
+	
 	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
 	public void loadFile(){
 	    JFileChooser chooser = new JFileChooser("..");
@@ -54,18 +57,20 @@ public class Filter extends WindowAdapter {
 	    disp[ind]=new Display(minidraw);    
 	   
 	    if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-
+	    	Shape shapeTmp = null   ;
 	    ctrl.mainframe.clear();	    
 	    try {
 	      BufferedReader buff = new BufferedReader(new FileReader(chooser.getSelectedFile().getPath())); 
-	      Shape shapeTmp = null  ;
-	      for(String line = buff.readLine(); line != null; line = buff.readLine()) {                      
+	     
+	      for(String line = buff.readLine(); line != null; line = buff.readLine()) {
+	    	  
 	        StringTokenizer t = new StringTokenizer(line, " ");
 	        Vector tmp = new Vector();
 	        
 	        while(t.hasMoreTokens()) {        
 	          tmp.add(t.nextToken());          
 	        }
+	        
 	        if((new Integer((String)tmp.elementAt(0))).intValue()>ind) {
 	        	  System.out.println("inside if:"+(new Integer((String)tmp.elementAt(0))));
 	        	  disp[ind].shapes.add(shapeTmp);
@@ -122,22 +127,16 @@ public class Filter extends WindowAdapter {
 	                                    new Integer((String)tmp.elementAt(9)).intValue()));                  
 	        shapeTmp.setFilled((new Boolean((String)tmp.elementAt(10))).booleanValue()); 
 
-	        
+	        disp[ind].shapes.add(shapeTmp);
        
-	      
-	      disp[ind].shapes.add(shapeTmp);
-	 
 	      }
-	      buff.close();	
 	      
-	      //for(int i=0;i<slides;i++)
-	      int i=0;
-	      do
-	      {
-		    	
-        	  minidraw.addDisplay(i,disp[i]);
-        i++;
-	      }while(i<slides);
+	  
+	      buff.close();	
+	      if(ind==0) {minidraw.addDisplay(0, disp[0]);}
+	      for(int i=0;i<slides;i++) {    	
+        	  minidraw.addDisplay(i,disp[i]);     
+	      }
 	    }
 	    
 	    catch(IOException e){

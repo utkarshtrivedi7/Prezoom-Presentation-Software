@@ -16,14 +16,17 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
-import diu.swe.habib.JPanelSlider.JPanelSlider;
 import prezooom.app.Controller.Controller;
 import prezooom.app.Controller.StateManager;
 import prezooom.app.Model.Display;
 import prezooom.app.Model.Filter;
+import prezooom.app.Model.JPanelSlider;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Timer;
+import java.util.Vector;
+
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -104,6 +107,19 @@ public class MainFrame extends javax.swing.JFrame {
         pastee = new javax.swing.JLabel();
         del = new javax.swing.JLabel();
         dupli = new javax.swing.JLabel();
+        dupli.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		if(current_slide==0);
+        		else {
+        		Vector orig=dis[current_slide-1].getVector();
+        		Vector nw=control.duplicate(orig);
+        		System.out.println(current_slide);
+                   for(int i=0;i<orig.size();i++) {
+                	   dis[current_slide].shapes.add(orig.elementAt(i));                	                	   
+                   }    }   		
+        	}
+        });
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -1475,14 +1491,12 @@ if(tran==0) {
 	JPanel p=dis[current_slide];
 	current_slide++;
 	JPanel p3=dis[current_slide];
-	JPanel p2=new JPanel();
-	p2.setBackground(Color.red);
 		main_slide.removeAll();
 		main_slide.add(jp);	
 		jp.add(p);
 		jp.add(p3);
-		jp.nextPanel(50,p3, jp.right);
-		
+		jp.nextPanel(50,p3, jp.right);		
+		current_slide++;
 		tran++;
 		}
 else {

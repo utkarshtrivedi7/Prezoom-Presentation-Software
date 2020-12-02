@@ -157,7 +157,7 @@ public void undo() {
 public void redo() {
 	shapes.addElement(shapes2.elementAt(shapes2.size()-1));
 	shapes2.removeElementAt(shapes2.size()-1);
-	this.repaint();
+	this.repaint();	
 }
   public void paintComponent(Graphics g){
     super.paintComponent(g);
@@ -215,7 +215,7 @@ public void mouseReleased(MouseEvent e){
         }
 
 
-        Shape ret ; 
+    Shape ret ; 
     switch(selectedShape){
          
           case CIRCLE :
@@ -504,10 +504,19 @@ public void mouseDragged(MouseEvent e){
 	  control.ft.setsize(sze);
 	  control.ft.setcolor(clr);
 	  jt.setText(text);
-	  jt.setForeground(clr);
-	  
+	  jt.setForeground(clr);	  
   }
 
+  public Vector getVector() {
+return this.shapes;
+  }
+  public void setVector(Vector v) {
+	  for(int i=0;i<v.size()-1;i++){
+		  this.shapes.add(v.elementAt(i));
+		  this.repaint();
+	  }
+  }
+  
 @Override
 public void mouseClicked(MouseEvent arg0) {	
 }

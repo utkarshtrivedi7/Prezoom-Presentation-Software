@@ -30,7 +30,7 @@ public class ComponentMover extends MouseAdapter
 
 	/**
 	 *  Constructor for moving individual components. The components must be
-	 *  registered using the registerComponent() method.
+	 *  regisetered using the registerComponent() method.
 	 */
 	public ComponentMover()
 	{
