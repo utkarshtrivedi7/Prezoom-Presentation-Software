@@ -30,7 +30,7 @@ public class ComponentMover extends MouseAdapter
 
 	/**
 	 *  Constructor for moving individual components. The components must be
-	 *  regisetered using the registerComponent() method.
+	 *  registered using the registerComponent() method.
 	 */
 	public ComponentMover()
 	{
@@ -168,7 +168,7 @@ public class ComponentMover extends MouseAdapter
 			source.setCursor( Cursor.getPredefinedCursor(Cursor.MOVE_CURSOR) );
 		}
 
-		//  Making sure autoscrolls is false will allow for smoother dragging of
+		//  Making sure auto-scrolls is false will allow for smoother dragging of
 		//  individual components
 
 		if (destination instanceof JComponent)
@@ -179,7 +179,7 @@ public class ComponentMover extends MouseAdapter
 		}
 	}
 
-	
+
 	@Override
 	public void mouseDragged(MouseEvent e)
 	{
@@ -220,7 +220,7 @@ public class ComponentMover extends MouseAdapter
 		return drag;
 	}
 
-	
+
 	private Dimension getBoundingSize(Component source)
 	{
 		if (source instanceof Window)

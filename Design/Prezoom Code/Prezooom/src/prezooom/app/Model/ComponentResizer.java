@@ -149,7 +149,7 @@ public class ComponentResizer extends MouseAdapter
 		}
 	}
 
-	
+
 	@Override
 	public void mouseMoved(MouseEvent e)
 	{
@@ -169,13 +169,13 @@ public class ComponentResizer extends MouseAdapter
 		if (location.y > source.getHeight() - dragInsets.bottom - 1)
 			direction += SOUTH;
 
-		//  Mouse is no longer over a resizable border
+		//  Mouse is no longer over a re-sizable border
 
 		if (direction == 0)
 		{
 			source.setCursor( sourceCursor );
 		}
-		else  // use the appropriate resizable cursor
+		else  // use the appropriate re-sizable cursor
 		{
 			int cursorType = cursors.get( direction );
 			Cursor cursor = Cursor.getPredefinedCursor( cursorType );
@@ -220,7 +220,7 @@ public class ComponentResizer extends MouseAdapter
 		SwingUtilities.convertPointToScreen(pressed, source);
 		bounds = source.getBounds();
 
-		//  Making sure autoscrolls is false will allow for smoother resizing
+		//  Making sure auto-scrolls is false will allow for smoother resizing
 		//  of components
 
 		if (source instanceof JComponent)
@@ -260,7 +260,7 @@ public class ComponentResizer extends MouseAdapter
 
 	protected void changeBounds(Component source, int direction, java.awt.Rectangle bounds2, Point pressed, Point current)
 	{
-		//  Start with original locaton and size
+		//  Start with original location and size
 
 		int x = bounds2.x;
 		int y = bounds2.y;

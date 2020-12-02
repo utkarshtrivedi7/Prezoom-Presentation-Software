@@ -14,7 +14,7 @@ import javax.swing.border.Border;
 @SuppressWarnings("serial")
 public class Display extends JPanel implements MouseListener, MouseMotionListener{
 
-    public MainFrame minidraw;  
+    public MainFrame minidraw;
     public Controller control;
 	public final  int NOSHAPE = -1;
 	public final  int CIRCLE = 0;
@@ -26,7 +26,7 @@ public class Display extends JPanel implements MouseListener, MouseMotionListene
 	public final int textBox=5;
 	public final static String DEFAULT_WIDTH = "100";
 	public final static String DEFAULT_HEIGHT = "50";
-	
+
 	public final static Color DEFAULT_COLOR = Color.blue;
 	public final static boolean DEFAULT_FILLED = false;
     String fontName;
@@ -39,52 +39,52 @@ public class Display extends JPanel implements MouseListener, MouseMotionListene
     private boolean zoomer;
     private double xOffset = 0;
     private double yOffset = 0;
-    
-    
-	JTextArea jt=new JTextArea("Write");
-	
+
+
+	JTextArea jt=new JTextArea("Write"); //creation of textbox with default text inside textbox
+
 
   fontsize font;
   @SuppressWarnings("rawtypes")
-  public Vector shapes,shapes2;   
- 
-  public Color colorSelected;                                      
+  public Vector shapes,shapes2;
+
+  public Color colorSelected;
   public static int value=0;
-  public int selectedShape;                                         
+  public int selectedShape;
   private Popup popup;
-  public boolean filledShape;                                       
-  public int shapeUnderCursor;                                  
-  public boolean resizeX, resizeY;                                  
+  public boolean filledShape;
+  public int shapeUnderCursor;
+  public boolean resizeX, resizeY;
   private boolean dragModeRun;
-  private int originX, originY;                                     
+  private int originX, originY;
 
   @SuppressWarnings("rawtypes")
-  
+
 public Display(MainFrame minidraw){
      super(true);                                                /* Set double buffered */
-    
+
 	this.minidraw = minidraw;
     addMouseListener(this);
     addMouseMotionListener(this);
     setBackground(Color.white);
-    setCursor(new Cursor(Cursor.HAND_CURSOR));  
-    colorSelected = DEFAULT_COLOR;                    
-    filledShape = DEFAULT_FILLED;                     
-    shapeUnderCursor = NOSHAPE;                       
+    setCursor(new Cursor(Cursor.HAND_CURSOR));
+    colorSelected = DEFAULT_COLOR;
+    filledShape = DEFAULT_FILLED;
+    shapeUnderCursor = NOSHAPE;
     control=new Controller(minidraw,this);
     font=fontsize.create();
     xOffset=this.getWidth();
     yOffset=this.getHeight();
-   
+
     popup = new Popup(minidraw, this);
-    shapes = new Vector(); 
+    shapes = new Vector();
     shapes2=new Vector();
-    dragModeRun = false;    
-    
+    dragModeRun = false;
+
   }
 
 
-  
+
 public void setShape(int shpe) {
 	if(shpe==-1)
 	this.selectedShape=NOSHAPE;
@@ -96,7 +96,7 @@ public void setShape(int shpe) {
 		this.selectedShape=SQUARE;
 	if(shpe==3)
 		this.selectedShape=RECTANGLE;
-	if(shpe==4) 
+	if(shpe==4)
 		this.selectedShape=LINE;
 if(shpe==5) {
        addTextbox();
@@ -105,10 +105,10 @@ if(shpe==5) {
 		this.selectedShape=noShape;
 		this.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 	}
-		
 
-	
-	
+
+
+
       jt.addMouseListener(new MouseAdapter(){
           @Override
           public void mouseClicked(MouseEvent e){
@@ -117,15 +117,15 @@ if(shpe==5) {
             color=font.getcolor();
             Font f=new Font(fontName,Font.PLAIN,fontSize);
             jt.setFont(f);
-            jt.setForeground(color);          
+            jt.setForeground(color);
           }
           public void mouseExited(MouseEvent e) {
         	  text=jt.getText();
         	  System.out.println(text);
           }
       });
-      
-      
+
+
 this.addMouseWheelListener(new MouseAdapter() {
   		public void mouseWheelMoved(MouseWheelEvent e) {
   			System.out.println("enterd mouse wheel");
@@ -133,7 +133,7 @@ this.addMouseWheelListener(new MouseAdapter() {
   		    //Zoom in
   		    if (e.getWheelRotation() < 0) {
   		        zoomFactor *= 1.1;
-  		        
+
   		        repaint();
   		    }
   		    //Zoom out
@@ -143,26 +143,26 @@ this.addMouseWheelListener(new MouseAdapter() {
   		    }
   		}
   	});
-      
-	
+
+
 }
 
 @SuppressWarnings("unchecked")
 public void undo() {
 	shapes2.addElement(shapes.elementAt(shapes.size()-1));
 	shapes.removeElementAt(shapes.size()-1);
-	this.repaint();	
+	this.repaint();
 }
 @SuppressWarnings("unchecked")
 public void redo() {
 	shapes.addElement(shapes2.elementAt(shapes2.size()-1));
 	shapes2.removeElementAt(shapes2.size()-1);
-	this.repaint();	
+	this.repaint();
 }
   public void paintComponent(Graphics g){
     super.paintComponent(g);
     for(int i = 0; i < shapes.size(); i++)
-    
+
       ((Shape)shapes.elementAt(i)).draw(g);
 	   }
 
@@ -177,11 +177,11 @@ public void redo() {
 }
 
 
-  
+
   public void mousePressed(MouseEvent e){
     originX = e.getX();
     originY = e.getY();
-    
+
   }
 
 
@@ -215,9 +215,9 @@ public void mouseReleased(MouseEvent e){
         }
 
 
-    Shape ret ; 
+    Shape ret ;
     switch(selectedShape){
-         
+
           case CIRCLE :
             ret = new Circle(x - width / 2, y - width / 2, width);
             break;
@@ -236,16 +236,16 @@ public void mouseReleased(MouseEvent e){
          case RECTANGLE :
           ret = new Rectangle(x - width / 2, y - height / 2, width, height);
             break;
-	
-		 case LINE: 
-			 ret=new Line(e.getX()/2 , e.getY()/2 , width, height); 
+
+		 case LINE:
+			 ret=new Line(e.getX()/2 , e.getY()/2 , width, height);
 			 break;
-		 
+
 		 case noShape:
 			 ret=new noShape(0,0);
 			 break;
-	
-         	  
+
+
 
           default:
             //JOptionPane.showMessageDialog(null,"Left Mouse Clicked","Unknow Error", JOptionPane.ERROR_MESSAGE);
@@ -257,14 +257,14 @@ public void mouseReleased(MouseEvent e){
         repaint();                                                        /* Refresh */
         return;
       }
-      
+
       //button 1 end
 
- 
+
       if(e.getButton() == MouseEvent.BUTTON3){
 
         int i = shapes.size();
-        shapeUnderCursor = NOSHAPE;                              
+        shapeUnderCursor = NOSHAPE;
 
         /* If there are a shape under the cursor, show the popup */
         while(--i >= 0){
@@ -297,9 +297,9 @@ public void mouseReleased(MouseEvent e){
         }
       }
     }
-    
+
  //release button end
-  
+
     else{
       dragModeRun = false;
     }
@@ -316,14 +316,14 @@ public void mouseDragged(MouseEvent e){
     if ((selectedShape == NOSHAPE) && (shapeUnderCursor == NOSHAPE))
       return;
 
- 
+
     if (selectedShape == NOSHAPE){
       Shape tmp = (Shape)shapes.elementAt(shapeUnderCursor);
 
-    
+
       if(resizeX || resizeY){
 
-       
+
         if(resizeX){
           if ((tmp instanceof Square) || (tmp instanceof Circle))   /* The shape under the cursor is a square or a circle */
             tmp.width = tmp.height = Math.abs(x - tmp.x);
@@ -331,7 +331,7 @@ public void mouseDragged(MouseEvent e){
             tmp.width = Math.abs(x - tmp.x);
         }
 
-       
+
         if(resizeY){
           if ((tmp instanceof Square) || (tmp instanceof Circle) || (tmp instanceof Line))
             tmp.height = tmp.width = Math.abs(y - tmp.y);
@@ -344,7 +344,7 @@ public void mouseDragged(MouseEvent e){
         tmp.x = x - tmp.width / 2;
         tmp.y = y - tmp.height / 2;
       }
-             
+
       repaint();
       return;
     }
@@ -355,8 +355,8 @@ public void mouseDragged(MouseEvent e){
 
       Shape ret;
 
-   
-   
+
+
       switch(selectedShape){
 
         /* Draw a Circle */
@@ -391,11 +391,11 @@ public void mouseDragged(MouseEvent e){
       shapes.add(ret);
       shapeUnderCursor = shapes.size()-1;
     }
-    else{ 
-    	
+    else{
+
       Shape currentShape = (Shape)shapes.elementAt(shapeUnderCursor);
       //System.out.println(currentShape+"current shape");
-     
+
       if((currentShape instanceof Circle)||(currentShape instanceof Square ) || (currentShape instanceof Line)){
 
         if(Math.abs(x - originX) > Math.abs(y - originY))
@@ -403,7 +403,7 @@ public void mouseDragged(MouseEvent e){
         else
           currentShape.width = currentShape.height = Math.abs(y - originY);
       }
-     
+
       else{
         currentShape.width = Math.abs(x - originX);
         currentShape.height = Math.abs(y - originY);
@@ -411,7 +411,7 @@ public void mouseDragged(MouseEvent e){
     }
 
     repaint();
-                    
+
   }
 
 
@@ -475,8 +475,8 @@ public void mouseDragged(MouseEvent e){
 	        prevZoomFactor = zoomFactor;
 	        g2.transform(at);
 	       // g2.drawOval(xOffset, yOffset, 30, 40);
-	    
-	        
+
+
 	        this.revalidate();
 	        this.repaint();
 	        zoomer = false;
@@ -491,20 +491,20 @@ public void mouseDragged(MouseEvent e){
 	  ComponentMover cm = new ComponentMover();
  	  cm.registerComponent(jt);
  	  cr.registerComponent(jt);
- 	  cm.setDragInsets(cr.getDragInsets());  
+ 	  cm.setDragInsets(cr.getDragInsets());
  	  textbox=true;
  	  this.add(jt);
  	  this.validate();
   }
-  
-  
+
+
   public void addAttr(String text,String fontn, int sze,Color clr) {
 	  Font f=new Font(fontn,Font.PLAIN,sze);
 	  control.ft.setfont(fontn);
 	  control.ft.setsize(sze);
 	  control.ft.setcolor(clr);
 	  jt.setText(text);
-	  jt.setForeground(clr);	  
+	  jt.setForeground(clr);
   }
 
   public Vector getVector() {
@@ -516,11 +516,11 @@ return this.shapes;
 		  this.repaint();
 	  }
   }
-  
+
 @Override
-public void mouseClicked(MouseEvent arg0) {	
+public void mouseClicked(MouseEvent arg0) {
 }
-public void mouseEntered(MouseEvent arg0) {	
+public void mouseEntered(MouseEvent arg0) {
 }
 public void mouseExited(MouseEvent arg0) {
 }

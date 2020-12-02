@@ -35,57 +35,57 @@ public class Filter extends WindowAdapter {
 	int current;
 	JPanel p=new JPanel();
     Display disp[]=new Display[1000];
-	public boolean toSave = false; 
+	public boolean toSave = false;
 	public boolean textbox=false;
 	String text=null;
 	public Filter(Display d,Controller ct,MainFrame f) {
-		
+
 		this.display=d;
 		this.ctrl=ct;
 		this.minidraw=f;
-		
+
 	}
 
-	
-	
-	
+
+
+
 	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
 	public void loadFile(){
 	    JFileChooser chooser = new JFileChooser("..");
 	    chooser.setDialogTitle("Load");
 	    chooser.setApproveButtonText("Load");
-	    disp[ind]=new Display(minidraw);    
-	   
+	    disp[ind]=new Display(minidraw);
+
 	    if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 	    	Shape shapeTmp = null   ;
-	    ctrl.mainframe.clear();	    
+	    ctrl.mainframe.clear();
 	    try {
-	      BufferedReader buff = new BufferedReader(new FileReader(chooser.getSelectedFile().getPath())); 
-	     
+	      BufferedReader buff = new BufferedReader(new FileReader(chooser.getSelectedFile().getPath()));
+
 	      for(String line = buff.readLine(); line != null; line = buff.readLine()) {
-	    	  
+
 	        StringTokenizer t = new StringTokenizer(line, " ");
 	        Vector tmp = new Vector();
-	        
-	        while(t.hasMoreTokens()) {        
-	          tmp.add(t.nextToken());          
+
+	        while(t.hasMoreTokens()) {
+	          tmp.add(t.nextToken());
 	        }
-	        
+
 	        if((new Integer((String)tmp.elementAt(0))).intValue()>ind) {
 	        	  System.out.println("inside if:"+(new Integer((String)tmp.elementAt(0))));
 	        	  disp[ind].shapes.add(shapeTmp);
 	        	  ind++;
 		          disp[ind]=new Display(minidraw);
-	        	
+
 	        }
 	        slides=(new Integer((String)tmp.elementAt(1)).intValue());
 	        System.out.println("states:"+slides);
 	        int l=(new Integer((String)tmp.elementAt(0)).intValue());
-         
-	        
-	       
+
+
+
 	        switch((new Integer((String)tmp.elementAt(2))).intValue()) {
-	       
+
 	          /* Circle */
 	          case CIRCLE :
 	            shapeTmp = new Circle(new Integer((String)tmp.elementAt(3)).intValue(),
@@ -110,8 +110,8 @@ public class Filter extends WindowAdapter {
 
 	          /* Rectangle */
 	          case RECTANGLE :
-	        	 
-	        	 
+
+
 	            shapeTmp = new Rectangle(new Integer((String)tmp.elementAt(3)).intValue(),
 	                                        new Integer((String)tmp.elementAt(4)).intValue(),
 	                                        new Integer((String)tmp.elementAt(5)).intValue(),
@@ -119,31 +119,31 @@ public class Filter extends WindowAdapter {
 	            break;
 
 	          default :
-	            //JOptionPane.showMessageDialog(null,"Contains of file is erroned", "Error during read from file", JOptionPane.ERROR_MESSAGE);
+	            //JOptionPane.showMessageDialog(null,"Contains of file is error-ed", "Error during read from file", JOptionPane.ERROR_MESSAGE);
 	            ;
 	        }
 	        shapeTmp.setColor(new Color(new Integer((String)tmp.elementAt(7)).intValue(),
 	                                    new Integer((String)tmp.elementAt(8)).intValue(),
-	                                    new Integer((String)tmp.elementAt(9)).intValue()));                  
-	        shapeTmp.setFilled((new Boolean((String)tmp.elementAt(10))).booleanValue()); 
+	                                    new Integer((String)tmp.elementAt(9)).intValue()));
+	        shapeTmp.setFilled((new Boolean((String)tmp.elementAt(10))).booleanValue());
 
 	        disp[ind].shapes.add(shapeTmp);
-       
+
 	      }
-	      
-	  
-	      buff.close();	
+
+
+	      buff.close();
 	      if(ind==0) {minidraw.addDisplay(0, disp[0]);}
-	      for(int i=0;i<slides;i++) {    	
-        	  minidraw.addDisplay(i,disp[i]);     
+	      for(int i=0;i<slides;i++) {
+        	  minidraw.addDisplay(i,disp[i]);
 	      }
 	    }
-	    
+
 	    catch(IOException e){
-	      JOptionPane.showMessageDialog(minidraw, e.getMessage());    
+	      JOptionPane.showMessageDialog(minidraw, e.getMessage());
 	      ;
 	    }
-                             
+
 	}
 	  }
 
@@ -153,17 +153,17 @@ public class Filter extends WindowAdapter {
 	    JFileChooser chooser = new JFileChooser("..");
 	    chooser.setDialogTitle("Save");
 	    chooser.setApproveButtonText("Save");
-	 
+
 	    if(chooser.showOpenDialog(minidraw) == JFileChooser.APPROVE_OPTION) {
-	    	
+
 	    try {
-	   		
+
 		    BufferedWriter buff = new BufferedWriter(new FileWriter(chooser.getSelectedFile().getPath()));
-		    for(int k=0;k<=states;k++) {	      
-		      display=ctrl.getDispl(k);	      
+		    for(int k=0;k<=states;k++) {
+		      display=ctrl.getDispl(k);
 		      for(int i = 0; i < display.shapes.size(); i++) {                  /* Cover the shapes vector */
 		       Shape tmpShape = (Shape)display.shapes.elementAt(i);
-		       String strType = new String();	        
+		       String strType = new String();
 		        /* Determinate sort of shape */
 		        if(tmpShape instanceof Line)
 		        	strType="4";
@@ -180,23 +180,23 @@ public class Filter extends WindowAdapter {
 	        	   if(text!=null) {
 	        		   textbox=true;
 	        	   }
-           }	        
-	        String strShape = new String(k+" "+states+" "+strType+ " " + tmpShape.x + " " + tmpShape.y + " " + tmpShape.width + " " + 
+           }
+	        String strShape = new String(k+" "+states+" "+strType+ " " + tmpShape.x + " " + tmpShape.y + " " + tmpShape.width + " " +
 							  tmpShape.height + " " + tmpShape.color.getRed() + " " + tmpShape.color.getGreen() + " " +
 	                          tmpShape.color.getBlue() + " " + tmpShape.filled);
-	        
+
 	        buff.write(strShape,0,strShape.length());
-	        buff.newLine(); 
+	        buff.newLine();
 	      }
 	      }
-     
-	      buff.close();                     							
+
+	      buff.close();
 	    }
-	    
-	    
+
+
 	    catch(IOException e){
-	      JOptionPane.showMessageDialog(minidraw, e.getMessage());  
-	      
+	      JOptionPane.showMessageDialog(minidraw, e.getMessage());
+
 	    }
 	  }
 	  }
