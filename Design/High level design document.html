@@ -25,15 +25,15 @@ w\:* {behavior:url(#default#VML);}
   <o:Template>Normal</o:Template>
   <o:LastAuthor>Utkarsh Trivedi</o:LastAuthor>
   <o:Revision>2</o:Revision>
-  <o:TotalTime>650</o:TotalTime>
-  <o:Created>2020-11-19T02:02:00Z</o:Created>
-  <o:LastSaved>2020-11-19T02:02:00Z</o:LastSaved>
+  <o:TotalTime>694</o:TotalTime>
+  <o:Created>2020-12-02T20:54:00Z</o:Created>
+  <o:LastSaved>2020-12-02T20:54:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>1655</o:Words>
-  <o:Characters>9436</o:Characters>
-  <o:Lines>78</o:Lines>
+  <o:Words>1694</o:Words>
+  <o:Characters>9657</o:Characters>
+  <o:Lines>80</o:Lines>
   <o:Paragraphs>22</o:Paragraphs>
-  <o:CharactersWithSpaces>11069</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>11329</o:CharactersWithSpaces>
   <o:Version>16.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -295,6 +295,8 @@ href="High%20level%20design%20document_files/colorschememapping.xml">
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="HTML Variable"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="annotation subject"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="No List"/>
@@ -379,9 +381,15 @@ href="High%20level%20design%20document_files/colorschememapping.xml">
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Table Professional"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Table Subtle 2"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Balloon Text"/>
   <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
@@ -1000,14 +1008,14 @@ style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
  </v:formulas>
  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
  <o:lock v:ext="edit" aspectratio="t"/>
-</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1028" type="#_x0000_t75"
- alt="Diagram&#10;&#10;Description automatically generated" style='width:1050pt;
- height:684pt;visibility:visible;mso-wrap-style:square'>
+</v:shapetype><v:shape id="Picture_x0020_5" o:spid="_x0000_i1028" type="#_x0000_t75"
+ alt="Diagram, schematic&#10;&#10;Description automatically generated" style='width:1146pt;
+ height:22in;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="High%20level%20design%20document_files/image001.jpg"
-  o:title="Diagram&#10;&#10;Description automatically generated"/>
-</v:shape><![endif]--><![if !vml]><img width=1400 height=912
-src="High%20level%20design%20document_files/image001.jpg"
-alt="Diagram&#10;&#10;Description automatically generated" v:shapes="Picture_x0020_1"><![endif]></span><span
+  o:title="Diagram, schematic&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img width=1528 height=2112
+src="High%20level%20design%20document_files/image002.jpg"
+alt="Diagram, schematic&#10;&#10;Description automatically generated" v:shapes="Picture_x0020_5"><![endif]></span><span
 style='mso-bidi-font-weight:bold'><o:p></o:p></span></b></p>
 
 <p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
@@ -1032,9 +1040,9 @@ etc.</p>
 <p class=MsoNormal>2) View Package:</p>
 
 <p class=MsoNormal>Any representation of the application and information is
-handled with the help of this package. Multiple different customizations according
-to our requirements are done so that we can create a GUI based on it which
-serves our purpose.</p>
+handled with the help of this package. Multiple different customizations
+according to our requirements are done so that we can create a GUI based on it
+which serves our purpose.</p>
 
 <p class=MsoNormal>Contains: addpanel.java, ComponentMover.java,
 ComponentResizer.java, FileFilter.java, JpanelSlider.java etc.</p>
@@ -1047,6 +1055,13 @@ interactions on the data model objects. It receives the input, validates it
 optionally and then proceeds to pass it to the model.</p>
 
 <p class=MsoNormal>Contains: FontChooser.java, Jtext.java, MainFrame.java, etc.</p>
+
+<p class=MsoNormal>4) Test Package:</p>
+
+<p class=MsoNormal>The purpose of the test package is to test all the main
+classes in the different packages above. We have used Junit for the purpose of
+the testing and have successfully tested 7 different classes. This proves that
+they can work independently.</p>
 
 <p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
 
@@ -1074,41 +1089,39 @@ showing the classes<o:p></o:p></b></p>
 them and associations with classes in other packages that are depended on.<o:p></o:p></b></p>
 
 <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
-style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_2"
- o:spid="_x0000_i1027" type="#_x0000_t75" alt="Diagram&#10;&#10;Description automatically generated"
- style='width:756.6pt;height:428.4pt;visibility:visible;mso-wrap-style:square'>
- <v:imagedata src="High%20level%20design%20document_files/image002.jpg"
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_6"
+ o:spid="_x0000_i1027" type="#_x0000_t75" alt="Diagram, schematic&#10;&#10;Description automatically generated"
+ style='width:1329pt;height:1080.6pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="High%20level%20design%20document_files/image003.jpg"
+  o:title="Diagram, schematic&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img width=1772 height=1441
+src="High%20level%20design%20document_files/image004.jpg"
+alt="Diagram, schematic&#10;&#10;Description automatically generated" v:shapes="Picture_x0020_6"><![endif]></span><span
+style='mso-bidi-font-weight:bold'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_7"
+ o:spid="_x0000_i1026" type="#_x0000_t75" alt="Diagram&#10;&#10;Description automatically generated"
+ style='width:914.4pt;height:22in;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="High%20level%20design%20document_files/image005.jpg"
   o:title="Diagram&#10;&#10;Description automatically generated"/>
-</v:shape><![endif]--><![if !vml]><img width=1009 height=571
-src="High%20level%20design%20document_files/image002.jpg"
-alt="Diagram&#10;&#10;Description automatically generated" v:shapes="Picture_x0020_2"><![endif]></span><span
+</v:shape><![endif]--><![if !vml]><img width=1219 height=2112
+src="High%20level%20design%20document_files/image006.jpg"
+alt="Diagram&#10;&#10;Description automatically generated" v:shapes="Picture_x0020_7"><![endif]></span><span
+style='mso-bidi-font-weight:bold'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_8"
+ o:spid="_x0000_i1025" type="#_x0000_t75" alt="Diagram, schematic&#10;&#10;Description automatically generated"
+ style='width:447pt;height:454.2pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="High%20level%20design%20document_files/image007.jpg"
+  o:title="Diagram, schematic&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img width=596 height=606
+src="High%20level%20design%20document_files/image008.jpg"
+alt="Diagram, schematic&#10;&#10;Description automatically generated" v:shapes="Picture_x0020_8"><![endif]></span><span
 style='mso-bidi-font-weight:bold'><o:p></o:p></span></b></p>
 
 <p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
-
-<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
-style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_3"
- o:spid="_x0000_i1026" type="#_x0000_t75" alt="A picture containing graphical user interface&#10;&#10;Description automatically generated"
- style='width:647.4pt;height:330.6pt;visibility:visible;mso-wrap-style:square'>
- <v:imagedata src="High%20level%20design%20document_files/image003.jpg"
-  o:title="A picture containing graphical user interface&#10;&#10;Description automatically generated"/>
-</v:shape><![endif]--><![if !vml]><img width=863 height=441
-src="High%20level%20design%20document_files/image003.jpg"
-alt="A picture containing graphical user interface&#10;&#10;Description automatically generated"
-v:shapes="Picture_x0020_3"><![endif]></span><span style='mso-bidi-font-weight:
-bold'><o:p></o:p></span></b></p>
-
-<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
-style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_4"
- o:spid="_x0000_i1025" type="#_x0000_t75" alt="A picture containing diagram&#10;&#10;Description automatically generated"
- style='width:786pt;height:411pt;visibility:visible;mso-wrap-style:square'>
- <v:imagedata src="High%20level%20design%20document_files/image004.jpg"
-  o:title="A picture containing diagram&#10;&#10;Description automatically generated"/>
-</v:shape><![endif]--><![if !vml]><img width=1048 height=548
-src="High%20level%20design%20document_files/image004.jpg"
-alt="A picture containing diagram&#10;&#10;Description automatically generated"
-v:shapes="Picture_x0020_4"><![endif]></span><span style='mso-bidi-font-weight:
-bold'><o:p></o:p></span></b></p>
 
 <p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
 
@@ -1309,8 +1322,8 @@ in the developing and testing stage.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b>Camera:</b><span style='mso-bidi-font-weight:bold'> The
 main functions are zoom in zoom <span class=SpellE><span class=GramE>out,The</span></span>
-functions are coded properly but while testing there are some warnings but still
-the functions are in implementation level.<o:p></o:p></span></p>
+functions are coded properly but while testing there are some warnings but
+still the functions are in implementation level.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b>Shape:</b><span style='mso-bidi-font-weight:bold'> It has
 functionalities to move the components on the slide anywhere in x-y direction. The
@@ -1389,11 +1402,11 @@ Development <span class=GramE>Kit :</span><o:p></o:p></span></p>
 mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-theme-font:
 minor-latin;color:#202124;background:white'>In order to compile and&nbsp;<span
 style='mso-bidi-font-weight:bold'>execute</span>&nbsp;our&nbsp;<span
-style='mso-bidi-font-weight:bold'>Java project “<span class=SpellE>Prezoom</span></span>,
-it&nbsp;<span style='mso-bidi-font-weight:bold'>need to install</span>&nbsp;a
-latest version of software <span style='mso-bidi-font-weight:bold'>program</span>
-called&nbsp;<span style='mso-bidi-font-weight:bold'>Java</span>&nbsp;SE Development
-Kit (or JDK for short, and SE means Standard Edition).<o:p></o:p></span></p>
+style='mso-bidi-font-weight:bold'>Java project “Prezoom</span>, it&nbsp;<span
+style='mso-bidi-font-weight:bold'>need to install</span>&nbsp;a latest version
+of software <span style='mso-bidi-font-weight:bold'>program</span> called&nbsp;<span
+style='mso-bidi-font-weight:bold'>Java</span>&nbsp;SE Development Kit (or JDK
+for short, and SE means Standard Edition).<o:p></o:p></span></p>
 
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:13.2pt;margin-left:
 0cm;text-indent:18.0pt'><span lang=EN-US style='font-size:11.0pt;font-family:

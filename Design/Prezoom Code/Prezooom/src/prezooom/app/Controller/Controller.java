@@ -83,6 +83,7 @@ public JPanel getPanel(int index)
 	}
 
 public int total_slides() {	
+
 	return mainframe.state();
 }
 
@@ -91,9 +92,9 @@ public Display getDispl(int ind) {
 	return mainframe.getDisplay(ind);
 }
 
-public void present(JPanel p) {
+public void present() {
 	pres=new Presentation(mainframe,this);
-	pres.add(p);	
+	pres.duplicate();	
 }
 
 public void clear() {
@@ -104,6 +105,10 @@ public Vector duplicate(Vector orig) {
 	Vector copy=(Vector)orig.clone();
 	return copy;
 	
+}
+public Vector current_Vector(int ind) {
+	
+	return mainframe.vector(ind);
 }
 
 }

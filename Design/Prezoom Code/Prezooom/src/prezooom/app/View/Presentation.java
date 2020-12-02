@@ -3,37 +3,36 @@ package prezooom.app.View;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.util.Vector;
+
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
-
 import prezooom.app.Controller.Controller;
+import prezooom.app.Model.Display;
+import prezooom.app.Model.JPanelSlider;
 
-
-
-
-public class Presentation extends JFrame  {
-
+public class Presentation extends JFrame implements WindowListener {
+    JPanelSlider jp=new JPanelSlider();
 	private static final long serialVersionUID = 1L;
     Controller ct;
     MainFrame f;
 	private JPanel mpanel;
 	public JPanel panel;
 	public JButton btn1, btn2;
-	final JPanel copy[]=new JPanel[30];
 	MainFrame t;
-	int index=0;
-	int previous=0;
-	int next=0;
-	JPanel check=new JPanel();
-	JPanel start=new JPanel();
+	public int total_state,entered=0;
+	int previous=-1;
+	int next=1;
+
 	 
 	public Presentation(MainFrame f,Controller ct) {
 		this.ct=ct;
@@ -47,14 +46,14 @@ public class Presentation extends JFrame  {
 	   
 	     this. setSize(900,900);
 	     this. setBackground(Color.white);
+	     this.setForeground(Color.white);
 	     this. getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));    
 	      Border red = BorderFactory.createLineBorder(Color.white);
 	      mpanel = new JPanel();
 	      panel = new JPanel(); 
 	      panel.setPreferredSize(new Dimension(1150, 700));
-	      panel.setLayout(new BorderLayout());
-	    
-	      check.setBackground(Color.red);
+	      panel.setLayout(new BorderLayout());	    
+          panel.setBackground(Color.white);
 	      JPanel button_panel = new JPanel();
 	      btn1 = new JButton("Previous");
 	      btn2 = new JButton("Next");     
@@ -72,40 +71,98 @@ public class Presentation extends JFrame  {
 	      //this.setResizable(false);
 	      this.setVisible(true);
 	      
-	      btn2.addMouseListener(new MouseAdapter() {
-	    	  public void mouseClicked(MouseEvent e) {
-	     previous=index-1;
-	     check=ct.getPanel(index);
-	     panel.removeAll();
-	     panel.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-	     panel.add(check);
-	     panel.repaint();
-	     panel.validate();
-	     index++;
-	     if(index>ct.total_slides()) {
-	    	 index=ct.total_slides();
-	     }
-	    	    	    
-	      }});
-	      btn1.addMouseListener(new MouseAdapter() {
+	      
+	      
+	      
+//------------------- NEXT Button --------------------------------------------
+	      
+	  btn2.addMouseListener(new MouseAdapter() {
+	   	  public void mouseClicked(MouseEvent e) {
+             if(next<total_state) {
+           	  if(entered==0) {
+           		//panel.remove(dis[0]);
+						/*
+						 * panel.add(jp); jp.add(dis[0]);
+						 */
+           		  entered++;            	
+           	  }            	  
+	   		  jp.nextPanel(20, dis[next], jp.right);
+	   		  next++;
+	   		  previous++;
+             }
+    	     }});      
+//-------------------- PREVIOUS BUTTON	-----------------------------------------
+	      
+	btn1.addMouseListener(new MouseAdapter() {
 	    	  public void mouseClicked(MouseEvent e) {	 
-	     index=previous+1;
-	     check=ct.getPanel(previous);
-	     panel.removeAll();
-	     panel.add(check);
-	     panel.repaint();
-	     panel.validate();
-	     previous--;
-	     if(previous<=0) {
-	    	 previous=0;	         	 
-	     }
+	    		  if(previous>-1) {
+	    			  jp.nextPanel(30, dis[previous], jp.left);
+	    			  previous--;
+	    			  next--;  			 
+	    		  }	    		  
 	      }});	  		      
 	}
 	
 public void add(JPanel p) {		
-    panel.add(p);   
+    panel.add(jp);  
+    jp.add(p);
     index++;
-    
+	}
+
+public void duplicate() {
+	total_state=ct.total_slides();
 	
-	}	
+	do {
+		 dis[j]=new Display(f);
+		orig=ct.duplicate(ct.current_Vector(j));		
+       for(int i=0;i<orig.size();i++) {
+    	   dis[j].shapes.add(orig.elementAt(i));  
+    	   dis[j].selectedShape=5;
+      }   
+       jp.add(dis[j]);
+       j++;
+	}while(j<total_state);	
+	//panel.add(dis[0]);
+	panel.add(jp);
+	jp.getCurrentComponent(dis[0]);
+}
+
+@Override
+public void windowActivated(WindowEvent arg0) {
+	
+}
+
+@Override
+public void windowClosed(WindowEvent arg0) {
+	panel.removeAll();
+	jp.removeAll();
+}
+
+@Override
+public void windowClosing(WindowEvent arg0) {
+	panel.removeAll();
+	jp.removeAll();
+}
+
+@Override
+public void windowDeactivated(WindowEvent arg0) {	
+}
+
+@Override
+public void windowDeiconified(WindowEvent arg0) {
+}
+
+@Override
+public void windowIconified(WindowEvent arg0) {	
+}
+
+@Override
+public void windowOpened(WindowEvent arg0) {
+	
+}	
+public Display dis[]=new Display[1000];
+Vector orig=new Vector();
+Vector cpy=new Vector();
+public int j=0;
+public int index=0;
 }

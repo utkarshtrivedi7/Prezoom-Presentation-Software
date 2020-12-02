@@ -114,10 +114,11 @@ public class MainFrame extends javax.swing.JFrame {
         		else {
         		Vector orig=dis[current_slide-1].getVector();
         		Vector nw=control.duplicate(orig);
-        		System.out.println(current_slide);
                    for(int i=0;i<orig.size();i++) {
                 	   dis[current_slide].shapes.add(orig.elementAt(i));                	                	   
-                   }    }   		
+                   }  
+                main_slide.repaint();   
+        		}   		
         	}
         });
         jLabel5 = new javax.swing.JLabel();
@@ -1202,8 +1203,7 @@ save_file.addMouseListener(new MouseAdapter() {
 jButton1.addMouseListener(new MouseAdapter() {
 	@Override
 	public void mousePressed(MouseEvent e) {
-		dis[0].selectedShape=6;
-		control.present(dis[0]);
+		control.present();
 	}
 });
 
@@ -1264,7 +1264,9 @@ addslide.addMouseListener(new java.awt.event.MouseAdapter() {
 oval.addMouseListener(new MouseAdapter() {
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		dis[current_slide].setShape(1);	}
+		dis[current_slide].setShape(1);	
+System.out.println(current_state);	
+	}
 });
 
 aa.addMouseListener(new MouseAdapter() {
@@ -1289,7 +1291,7 @@ rect.addMouseListener(new MouseAdapter() {
 movee.addMouseListener(new MouseAdapter() {
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		dis[current_slide].setShape(-1);          		
+		dis[current_slide].setShape(-1);	
 	}});
 
 square.addMouseListener(new MouseAdapter() {
@@ -1484,7 +1486,10 @@ public void addDisplay(int indi,Display d) {
 	dis[indi]=d;
 	current_state++;
 }
-
+public Vector vector(int ind) {
+	
+	return dis[ind].shapes;
+}
 
  public void transition() {
 if(tran==0) {
@@ -1495,7 +1500,7 @@ if(tran==0) {
 		main_slide.add(jp);	
 		jp.add(p);
 		jp.add(p3);
-		jp.nextPanel(50,p3, jp.right);		
+		jp.nextPanel(50,dis[current_slide], jp.right);		
 		current_slide++;
 		tran++;
 		}
