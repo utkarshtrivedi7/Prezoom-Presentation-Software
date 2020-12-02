@@ -23,7 +23,9 @@
 - Redo: The perform action can be redone.
 - Duplicate: Can duplicate the previous state to the new state
 ## Transition: It will help to move the panel.
+- Start Transition: Would create a transition and move to the next state
 ## Presentation: It is for presenting the presentation.
+- Start Presentation: It would pop up a presentation window and use transition to move between states.
 - Next Slide: It is for going to next state in the presentation mode.
 - Previous Slide: It is for going to previous state in the presentation mode.
 
